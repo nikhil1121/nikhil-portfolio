@@ -11,7 +11,7 @@ export default function Hero() {
           {/* Text — bottom on mobile, left on desktop */}
           <div className="flex-1 text-center md:text-left reveal-left w-full">
             <h1 className="font-black leading-tight mb-5 text-primary"
-              style={{ fontSize: "clamp(1.9rem, 5.5vw, 4.5rem)" }}>
+              style={{ fontSize: "clamp(1.9rem, 3.5vw, 2.5rem)" }}>
               Hello! I'm{" "}
               <span className="grad-text">Nikhil Shendre</span>
               , an aspiring AI Engineer passionate about innovation
