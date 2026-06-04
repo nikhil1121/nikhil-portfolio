@@ -1,24 +1,33 @@
 const projects = [
   {
-    num: "01", title: "Doctor Appointment System",
-    desc: "End-to-end platform for booking and managing doctor appointments with real-time slot booking, doctor selection, and appointment history.",
-    tech: ["React", "Node.js", "Java", "REST API"],
-    demo: "#", github: "https://github.com/Nikhil1121",
-    accent: "#2dd4bf", glow: "rgba(45,212,191,0.12)",
+    num: "01",
+    title: "Prescripto - Doctor Appointment System",
+    desc: "Full-stack MERN doctor appointment platform with real-time slot booking, admin dashboard, doctor management, patient records, UPI payment integration, and JWT authentication. Deployed on Vercel + Render.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "JWT", "Cloudinary"],
+    demo: "https://doctor-appointment-frontend-git-master-nikhil1121s-projects.vercel.app/",
+    github: "https://github.com/Nikhil1121/Doctor_Appointment_Frontend",
+    accent: "#2dd4bf",
+    glow: "rgba(45,212,191,0.12)",
   },
   {
-    num: "02", title: "Resume Builder",
+    num: "02",
+    title: "Resume Builder",
     desc: "Generates professional ATS-friendly resumes with PDF export. Built with React, Tailwind CSS, Node.js, and MongoDB.",
     tech: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
-    demo: "#", github: "https://github.com/Nikhil1121",
-    accent: "#818cf8", glow: "rgba(129,140,248,0.12)",
+    demo: "#",
+    github: "https://github.com/Nikhil1121",
+    accent: "#818cf8",
+    glow: "rgba(129,140,248,0.12)",
   },
   {
-    num: "03", title: "Amazon Web App Clone",
+    num: "03",
+    title: "Amazon Web App Clone",
     desc: "Amazon-style homepage with product cards, cart UI, and search. Improved UI responsiveness by 35% using Flexbox and CSS Grid.",
     tech: ["HTML", "CSS", "JavaScript"],
-    demo: "#", github: "https://github.com/Nikhil1121",
-    accent: "#f59e0b", glow: "rgba(245,158,11,0.12)",
+    demo: "#",
+    github: "https://github.com/Nikhil1121",
+    accent: "#f59e0b",
+    glow: "rgba(245,158,11,0.12)",
   },
 ];
 
@@ -77,11 +86,11 @@ export default function Projects() {
                   <a href={p.demo} target="_blank" rel="noreferrer"
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm text-black transition-all hover:opacity-90 hover:-translate-y-0.5"
                     style={{ background: `linear-gradient(135deg,${p.accent},${p.accent}cc)` }}>
-                    ↗ Live Demo
+                    ↗ Visit Project
                   </a>
                   <a href={p.github} target="_blank" rel="noreferrer"
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm border border-theme hover:border-theme-md text-primary transition-all hover:-translate-y-0.5">
-                    ⌥ GitHub
+                    ⌥ Source Code
                   </a>
                 </div>
               </div>
