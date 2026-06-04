@@ -30,7 +30,7 @@ const projects = [
     desc: "Amazon-style homepage with product cards, cart UI, and search functionality. Improved UI responsiveness by 35% using Flexbox and CSS Grid.",
     tech: ["HTML", "CSS", "JavaScript"],
     demo: "#",
-    github: "https://github.com/Nikhil1121",
+    github: "https://github.com/Nikhil1121/Amazon_Clone_ForDemo",
     accent: "#f59e0b",
     glow: "rgba(245,158,11,0.12)",
     icon: "🛒",
