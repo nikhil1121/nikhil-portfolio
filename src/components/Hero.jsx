@@ -19,7 +19,7 @@ export default function Hero() {
 
             <div className="flex flex-wrap items-center gap-4 mt-6 justify-center md:justify-start">
               <a href="#contact" className="btn-hire text-sm sm:text-base">Hire Me &rsaquo;</a>
-              <a href="/Nikhil-Resume.pdf" target="_blank" rel="noreferrer"
+              <a href="/Nikhil-Resume-008.pdf" target="_blank" rel="noreferrer"
                 className="inline-flex items-center gap-2 font-semibold text-sm sm:text-base transition-colors hover:text-teal-400 text-muted">
                 View Resume &rsaquo;
               </a>
