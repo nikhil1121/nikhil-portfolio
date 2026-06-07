@@ -54,38 +54,56 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div key={p.num} className="reveal group">
               <div
-                className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-theme hover:border-theme-md transition-all duration-500 hover:shadow-2xl"
-                style={{ boxShadow: `0 0 40px ${p.glow}` }}
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-theme hover:border-theme-md transition-all duration-500"
+                style={{
+                  boxShadow: `0 8px 40px ${p.glow}`,
+                  background: 'var(--bg-card)'
+                }}
               >
                 <div className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
 
                   {/* Image Side */}
-                  <div className="lg:w-[55%] relative overflow-hidden min-h-[200px] sm:min-h-[280px]">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      style={{ minHeight: '250px' }}
-                    />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0"
-                      style={{
-                        background: i % 2 === 0
-                          ? `linear-gradient(to right, transparent 60%, var(--bg-card) 100%)`
-                          : `linear-gradient(to left, transparent 60%, var(--bg-card) 100%)`
-                      }}
-                    />
-                    {/* Project number watermark */}
-                    <div className="absolute bottom-3 left-4 font-black text-6xl sm:text-8xl select-none pointer-events-none"
-                      style={{ color: p.accent, opacity: 0.15 }}>
-                      {p.num}
+                  <div className="lg:w-[55%] relative overflow-hidden" style={{ minHeight: '280px' }}>
+                    {/* Browser mockup frame */}
+                    <div className="absolute inset-0 p-3 sm:p-4 flex flex-col">
+                      {/* Browser bar */}
+                      <div className="rounded-t-xl flex items-center gap-1.5 px-3 py-2 mb-0"
+                        style={{ background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)' }}>
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                        <div className="flex-1 mx-2 rounded-md px-2 py-0.5 text-xs text-gray-400 truncate"
+                          style={{ background: 'rgba(255,255,255,0.08)' }}>
+                          {p.demo !== '#' ? p.demo.replace('https://', '') : 'localhost:5173'}
+                        </div>
+                      </div>
+                      {/* Image inside browser */}
+                      <div className="flex-1 overflow-hidden rounded-b-xl">
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
+
+                    {/* Accent glow behind */}
+                    <div className="absolute inset-0 pointer-events-none"
+                      style={{ background: `radial-gradient(ellipse at center, ${p.glow} 0%, transparent 70%)` }} />
+
+                    {/* Project number watermark */}
+                    <span className="absolute bottom-2 right-3 font-black select-none pointer-events-none text-5xl sm:text-7xl"
+                      style={{ color: p.accent, opacity: 0.12 }}>
+                      {p.num}
+                    </span>
                   </div>
 
                   {/* Content Side */}
-                  <div className="lg:w-[45%] flex flex-col justify-center p-6 sm:p-8 lg:p-10 bg-card">
+                  <div className="lg:w-[45%] flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="font-mono text-xs tracking-widest" style={{ color: p.accent }}>PROJECT {p.num}</span>
+                      <span className="font-mono text-xs tracking-widest" style={{ color: p.accent }}>
+                        PROJECT {p.num}
+                      </span>
                       <div className="h-px flex-1 opacity-20" style={{ background: p.accent }} />
                     </div>
 
