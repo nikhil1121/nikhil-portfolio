@@ -26,7 +26,7 @@ const projects = [
     title: "Amazon Web App Clone",
     desc: "Amazon-style homepage with product cards, cart UI, and search functionality. Improved UI responsiveness by 35% using Flexbox and CSS Grid.",
     tech: ["HTML", "CSS", "JavaScript"],
-    demo: "#",
+    demo: "https://amazon-clone-for-demo.vercel.app/",
     github: "https://github.com/Nikhil1121",
     accent: "#f59e0b",
     glow: "rgba(245,158,11,0.15)",
