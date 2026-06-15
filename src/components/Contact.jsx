@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_s1mtc4e";
+const EMAILJS_TEMPLATE_ID = "template_0i6pcap";
+const EMAILJS_PUBLIC_KEY = "ouR3tEf9WJrbXJaW8";
 
 const MATH_Q = [
   { q: "What is 3 + 5?",  a: "8"  },
@@ -60,6 +65,7 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     setStatus("sending");
     try {
+      // Save to Firestore
       await addDoc(collection(db, "contacts"), {
         name:      form.name,
         phone:     form.phone,
@@ -68,6 +74,20 @@ export default function Contact() {
         timestamp: serverTimestamp(),
         read:      false,
       });
+
+      // Send Email Notification via EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
       setStatus("success");
       setForm({ name:"", phone:"", email:"", message:"", captcha:"" });
     } catch (err) {
